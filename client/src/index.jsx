@@ -1,28 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import Search from './components/Search.jsx';
-import RepoList from './components/RepoList.jsx';
+import CommentsList from './components/CommentsList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      repos: []
+      comments: [
+        {
+          "id": 0,
+          "content": "Hi Charlie! Wassup?",
+          "commenter_username": "John"
+        },
+        {
+          "id": 1,
+          "content": "I don't understand JS",
+          "commenter_username": "Adam"
+        },
+        {
+          "id": 2,
+          "content": "Hungry right now!, feed me!",
+          "commenter_username": "John"
+        },{
+
+        },{
+
+        }
+      ],
+      users: []
     }
 
+    this.fetchData = this.fetchData.bind(this);
   }
 
-  search (term) {
-    console.log(`${term} was searched`);
-    // TODO
+  componentDidMount(){
+    this.fetchData();
+  }
+
+  fetchData() {
+
   }
 
   render () {
-    return (<div>
-      <h1>Github Fetcher</h1>
-      <RepoList repos={this.state.repos}/>
-      <Search onSearch={this.search.bind(this)}/>
+    return (<div className="main">
+      <div>
+        <h2>List of Users:</h2>
+        <select>  
+          <option>John</option>
+          <option>Adam</option>
+          <option>Charlie</option>
+          <option>Lily</option>
+          <option>Kate</option>
+        </select>
+      </div>
+      <CommentsList comments={this.state.comments}/>
     </div>)
   }
 }
