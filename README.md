@@ -24,6 +24,7 @@ Fullstack review with mysql
 ### Exercise 5
 
 * When a user is selected from the drop down, only his comments should be showing
+* Pay attention to what is stored in the two databses, is there a connection between them?
 * Create the request call using '/comments/:username' and a dbhelper function to grab relevant comments from database
 
 
