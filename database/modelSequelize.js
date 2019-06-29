@@ -30,8 +30,8 @@ Users
       type: Sequelize.TEXT,
       required: true
     },
-    commenter_username: {
-      type: Sequelize.STRING,
+    userId: {
+      type: Sequelize.INTEGER,
       required: true
     }
   });
@@ -41,10 +41,6 @@ Comments
   .then( () => console.log('Able to connect to Comments Table'))
   .catch( err => console.error('Unable to connect to Comments Table', err));
 
-// Relations
-
-Users.hasMany(Comments);
-Comments.belongsTo(Users);
 
 module.exports = {
     Users,

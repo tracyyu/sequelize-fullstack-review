@@ -4,7 +4,7 @@ const CommentsListEntry = (props) => (
   <div className="repo-entry">
     <div className="username">
         <h4>
-           { props.obj.commenter_username }
+           { props.obj.user.username }
         </h4>
     </div>
     <div className="repo-info">

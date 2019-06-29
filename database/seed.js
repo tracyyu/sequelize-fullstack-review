@@ -27,52 +27,52 @@ const comments = [
     {
         "id": 0,
         "content": "Hi Charlie! Wassup?",
-        "commenter_username": "John"
+        "userId": 0
     },
     {
         "id": 1,
         "content": "I don't understand JS",
-        "commenter_username": "Adam"
+        "userId": 1
     },
     {
         "id": 2,
         "content": "Hungry right now!, feed me!",
-        "commenter_username": "John"
+        "userId": 0
     },
     {
         "id": 3,
         "content": "WHY ME!!!",
-        "commenter_username": "Charlie"
+        "userId": 2
     },
     {
         "id": 4,
         "content": "How's life going?",
-        "commenter_username": "John"
+        "userId": 0
     },
     {
         "id": 5,
         "content": "Bees Bees Bees... Classes, classes, classes",
-        "commenter_username": "Lily"
+        "userId": 3
     },
     {
         "id": 6,
         "content": "Wow, that's not nice.",
-        "commenter_username": "Kate"
+        "userId": 4
     },
     {
         "id": 7,
         "content": "Nobody is on help desk",
-        "commenter_username": "Charlie"
+        "userId": 2
     },
     {
         "id": 8,
         "content": "Who are you???",
-        "commenter_username": "Charlie"
+        "userId": 2
     },
     {
         "id": 9,
         "content": "What do you want from me?",
-        "commenter_username": "John"
+        "userId": 0
     },
 ];
 
@@ -85,7 +85,8 @@ Model.Users
         }else{
             console.log('Successfully added to database');
         }
-    });
+    })
+    .catch( err => console.error('Issue seeding Users Table', err));
 
 Model.Comments
     .bulkCreate(comments)
@@ -95,4 +96,5 @@ Model.Comments
         }else{
             console.log('Successfully added to database');
         }
-    });
+    })
+    .catch( err => console.error('Issue seeding Comments Table', err));
