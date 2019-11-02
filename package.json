@@ -37,6 +37,6 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "request": "^2.81.0",
-    "sequelize": "^5.1.0"
+    "sequelize": "^5.15.1"
   }
 }
